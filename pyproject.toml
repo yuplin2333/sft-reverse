@@ -1,7 +1,7 @@
 [project]
 name = "sft-reverse"
 version = "0.1.0"
-description = "Minimal anonymous release for reversible SFT behavior experiments."
+description = "Code release for reversible SFT behavior experiments."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
