@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual env
+.venv/
+
+# Artifacts
+checkpoints/
+results/
+logs/
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets
+.env
+.env.*

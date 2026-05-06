@@ -1,0 +1,62 @@
+[project]
+name = "sft-reverse"
+version = "0.1.0"
+description = "Minimal anonymous release for reversible SFT behavior experiments."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "accelerate>=1.10.0",
+    "anthropic>=0.71.0",
+    "bitsandbytes>=0.47.0",
+    "datasets>=4.0.0",
+    "deepspeed>=0.18.6",
+    "lm-eval>=0.4.11",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.5",
+    "python-dotenv>=1.2.1",
+    "pyyaml>=6.0.2",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "setuptools>=80.9.0",
+    "torch>=2.8.0",
+    "tqdm>=4.67.1",
+    "transformer-lens>=2.16.1",
+    "transformers>=4.55.2",
+    "trl>=0.21.0",
+    "wildguard>=1.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.151.9",
+    "pre-commit>=4.3.0",
+    "pyright[nodejs]>=1.1.407",
+    "pytest>=8.4.1",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.8",
+]
+flash-attn = [
+    "flash-attn-3 ; sys_platform == 'linux'",
+]
+
+[tool.uv.sources]
+flash-attn-3 = { url = "https://github.com/windreamer/flash-attention3-wheels/releases/download/2026.02.17-06dc5e7/flash_attn_3-3.0.0%2B20260216.cu128torch280cxx11abitrue.b62d93-cp39-abi3-linux_x86_64.whl" }
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "basic"
+reportUnusedImport = true
+reportUndefinedVariable = true
+reportGeneralTypeIssues = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+
+[tool.ruff]
+extend-exclude = ["drafts", "references"]
+extend-include = ["scripts/*.py"]
